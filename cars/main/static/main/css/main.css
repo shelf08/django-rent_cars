@@ -1,0 +1,50 @@
+/* Стили для верхнего меню */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Устанавливаем выше других слоев */
+}
+body {
+    font-family: 'Roboto', sans-serif; /* Для основного текста */
+}
+
+.logo {
+    width: 100px; /* Размер логотипа */
+    height: auto;
+}
+
+.navbar {
+    padding: 1rem; /* Можно настроить отступы */
+}
+
+.navbar-nav {
+    margin-left: 100px;
+    margin-right: 300px;
+    display: flex;
+    justify-content: space-between; /* Центрируем содержимое горизонтально */
+    flex-grow: 1; /* Позволяем элементам занять доступное пространство */
+}
+
+.navbar-nav a {
+    margin-right: 10px; /* Отступ между элементами */
+}
+
+.navbar-nav a:last-child {
+    margin-right: 0; /* Удаление отступа у последнего элемента */
+}
+
+.navbar-brand {
+    font-family: 'Montserrat', sans-serif; /* Для названия компании */
+}
+
+.nav-link {
+    font-family: 'Roboto', sans-serif; /* Для навигационных ссылок */
+    color: #000;
+}
+
+/* Основной контент */
+main {
+    padding-top: 70px; /* Отступ сверху, чтобы избежать наложения на верхнюю панель */
+}
