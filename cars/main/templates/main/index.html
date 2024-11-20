@@ -1,11 +1,132 @@
 {% extends 'main/layout.html' %}
 
-{% block title %}Главная страница{% endblock %}
+{% load static %}
+
+{% block title %}Главная страница проката автомобилей{% endblock %}
+
 
 {% block content %}
     <div class="features">
-        <h1></h1>
-        <p></p>
+        <h1>Прокат эксклюзивных дестких автомобилей</h1>
+        <h2>Прививайте вкус к автомобилям с детства</h2>
+        <p>Мы предлагаем широкий выбор: от легенд японского автопрома до немецких внедорожников!</p>
+
+        <h2>Наши услуги:</h2>
+        <ul1>
+            <li>Прокат автомобилей 24/7</li>
+            <li>Конкурентные цены без скрытых платежей</li>
+            <li>Автомобили в отличном состоянии и полной комплектации</li>
+            <li>Круглосуточная поддержка клиентов</li>
+        </ul1>
+
+        <h2>Выберите ваш автомобиль:</h2>
+        <div class="car-options">
+            <div class="car">
+                <h3>Компактный автомобиль</h3>
+                <img src="{% static 'main/img/granta.png' %}" alt="Компактный автомобиль" class="img-granta">
+                <p>Идеален для городских поездок</p>
+                <button>Забронировать</button>
+            </div>
+            <div class="car">
+                <h3>Легенда JDM</h3>
+                <img src="{% static 'main/img/mar.png' %}" alt="Легенда JDM" class="img-mark">
+                <p class="lifted-text">Комфортная поездка с семьёй или друзьями</p>
+                <button class="lifted-button">Забронировать</button>
+            </div>
+            <div class="car">
+                <h3>Внедорожник</h3>
+                <img src="{% static 'main/img/g-class.png' %}" alt="Внедорожник" class="img-g-class">
+                <p>Для приключений вне дорог</p>
+                <button>Забронировать</button>
+            </div>
+            <div class="car">
+                <h3>Электромобиль</h3>
+                <img src="{% static 'main/img/tesla.png' %}" alt="Электромобиль" class="img-tesla">
+                <p>Экологичный и экономичный выбор</p>
+                <button>Забронировать</button>
+            </div>
+        </div>
+
+        <h2>Контакты</h2>
+        <p>Если у вас есть вопросы, не стесняйтесь обращаться к нам!</p>
+        <p>Email: info@l-cars.ru | Телефон: +7 (914) 803-42-48</p>
     </div>
+        <footer>
+            <p>&copy; 2024 L-cars</p>
+        </footer>
+
+    <style>
+        * {
+            box-sizing: border-box; /* Глобальное применение box-sizing */
+        }
+        .features {
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 1400px;
+        }
+        .car-options {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .car {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px;
+            width: 250px;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            height: 300px;
+        }
+        .car img {
+            max-width: 100%;
+            border-radius: 4px;
+        }
+        .lifted-text{
+            margin-top: -35px;
+        }
+        .lifted-button{
+            margin-top: -35px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+        .img-granta {
+            transform: scale(1.4);
+        }
+        .img-mark {
+            padding-bottom: 40px;
+            transform: scale(0.8);
+        }
+        .img-g-class {
+            transform: scale(1.5);
+        }
+        .img-tesla {
+            transform: scale(1.0);
+        }
+        footer {
+        background: #8a8989;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        }
+    </style>
 
 {% endblock %}
