@@ -17,7 +17,7 @@ def generate_name(is_female):
     last_name = random.choice(last_names)
     middle_name = random.choice(middle_names)
 
-    return f"{last_name}_{first_name}_{middle_name}"
+    return f"{last_name} {first_name} {middle_name}"
 
 
 
@@ -34,14 +34,14 @@ def generate_age():
 data = []
 existing_records = set()
 
-for id in range(0, 1001):
+for id in range(1, 1002):
     is_female = random.choice([True, False])
     while True:
-        ФИО = generate_name(is_female)
-        Номер_телефона = generate_phone_number()
-        Возраст = generate_age()
+        name = generate_name(is_female)
+        phone_number = generate_phone_number()
+        years = generate_age()
 
-        record = (id, ФИО, Номер_телефона, Возраст)
+        record = (id, name, phone_number, years)
 
 
         if record not in existing_records:

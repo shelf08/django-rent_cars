@@ -2,7 +2,99 @@
 
 {% block title %}О нас{% endblock %}
 
+
 {% block content %}
-    <h1>О нас</h1>
-    <p>неО нас</p>
+    <div class="about-us">
+        <h1>О нас</h1>
+        <p>Мы - команда профессионалов, стремящихся к созданию качественного продукта для наших клиентов.
+            Наша цель - предоставление отличных услуг и поддержка наших клиентов на любом этапе.</p>
+
+        <h2>Контакты</h2>
+        <div class="contact-info">
+            <p><strong>Адрес:</strong> <a href="https://www.google.com/maps?q=г.+Чита,+ул.+Ленина,+д.+151" target="_blank">г. Чита, ул. Ленина, д. 151</a></p>
+                    <div class="google-map">
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2454.1693786514725!2d113.47766817716705!3d52.040227971939416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5dca3540289246f1%3A0x40cc2b11cd5290ab!2z0YPQuy4g0JvQtdC90LjQvdCwLCAxNTEsINCn0LjRgtCwLCDQl9Cw0LHQsNC50LrQsNC70YzRgdC60LjQuSDQutGA0LDQuSwgNjcyMDAw!5e0!3m2!1sru!2sru!4v1732127227995!5m2!1sru!2sru"
+                           width="725"
+                           height="450"
+                           style="border:0;"
+                           allowfullscreen=""
+                           loading="lazy"
+                           referrerpolicy="no-referrer-when-downgrade"
+                   ></iframe>
+                </div>
+            <p><strong>Телефон:</strong> +7 (914) 803-42-48</p>
+            <p><strong>Email:</strong> info@l-cars.ru</p>
+        </div>
+
+
+
+        <h2>Почему мы?</h2>
+        <ul>
+            <li>Опытная команда</li>
+            <li>Индивидуальный подход к каждому клиенту</li>
+            <li>Качество и надежность</li>
+        </ul>
+    </div>
+
+<footer>
+    <p>&copy; 2024 L-cars</p>
+</footer>
+
+
+<style>
+    * {
+        box-sizing: border-box; /* Глобальное применение box-sizing */
+    }
+
+.about-us {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.about-us h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.about-us h2 {
+    color: #555;
+    margin-top: 30px;
+    font-size: 1.8em;
+}
+
+.about-us p {
+    color: #555;
+    margin-top: 30px;
+    font-size: 1.2em;
+}
+
+.contact-info {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.about-us ul {
+    margin-top: 20px;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+footer {
+    font-weight: bold;
+    background: #8a8989;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+}
+
+</style>
 {% endblock %}

@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:sqlite:C:\Users\viplo\flask\pythonProject1\db\database.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="database1" uuid="e7b3ac17-28ee-4988-a279-66fa50af7103">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\viplo\flask\pythonProject1\db\database1.db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

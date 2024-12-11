@@ -8,3 +8,12 @@ def index(request):
 
 def about(request):
     return render(request, 'main/about.html')
+
+def lk(request):
+    return render(request, 'main/lk.html')
+
+def signin(request):
+    return render(request, 'main/signin.html')
+
+def signup(request):
+    return render(request, 'main/signup.html')

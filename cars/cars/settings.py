@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'cars.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'tables/database.db',
+        'NAME': BASE_DIR / 'tables/database2.db',
     }
 }
 

@@ -5,6 +5,7 @@
 
 {% block title %}Автомобили{% endblock %}
 
+
 {% block content %}
     <body>
         <div class="filters">
@@ -12,9 +13,9 @@
                 <label for="car-class">Класс автомобиля:</label>
                 <select id="car-class">
                     <option value="all">Все</option>
-                    <option value="suv">Эконом</option>
-                    <option value="sedan">Премиальные</option>
-                    <option value="hatchback">Люкс</option>
+                    <option value="econom">Эконом</option>
+                    <option value="premium">Премиальное</option>
+                    <option value="lux">Люкс</option>
                 </select>
             </div>
             <div class="filter">
@@ -24,10 +25,12 @@
                     <option value="toyota">Toyota</option>
                     <option value="bmw">BMW</option>
                     <option value="mercedes">Mercedes</option>
-                    <option value="mercedes">Tesla</option>
-                    <option value="mercedes">Dodge</option>
-                    <option value="mercedes">Lada</option>
-                    <option value="mercedes">Rolls-Royce</option>
+                    <option value="tesla">Tesla</option>
+                    <option value="subaru">Subaru</option>
+                    <option value="lada">Lada</option>
+                    <option value="gaz">ГАЗ</option>
+                    <option value="nissan">Nissan</option>
+                    <option value="porsche">Porsche</option>
                 </select>
             </div>
             <div class="filter">
@@ -42,65 +45,65 @@
         </div>
 
         <div class="catalog">
-            <div class="car">
-                <img src="{% static 'main/img/mar.png' %}" alt="Легенда JDM" class="car-image">
-                <h3>Toyota Land Cruiser</h3>
-                <p class="price">1500$ / час</p>
+            <div class="car" data-class="econom" data-brand="lada" data-price="low">
+                <img src="{% static 'auto/img/lada-granta-2.png' %}" alt="Эконом" class="car-image">
+                <h3>Lada Granta</h3>
+                <p class="price">300 ₽/30мин</p>
             </div>
-            <div class="car">
-                <img src="{% static 'main/img/g-class.png' %}" alt="Внедорожник" class="car-image">
+            <div class="car" data-class="lux" data-brand="mercedes" data-price="high">
+                <img src="{% static 'auto/img/mercedes-g-class.png' %}" alt="Люкс" class="car-image">
                 <h3>Mercedes G-Class</h3>
-                <p class="price">2500$ / час</p>
+                <p class="price">700 ₽/30мин</p>
             </div>
-            <div class="car">
-                <img src="{% static 'main/img/mar.png' %}" alt="Хэтчбек" class="car-image">
-                <h3>BMW 3 Series</h3>
-                <p class="price">1200$ / час</p>
+            <div class="car" data-class="econom" data-brand="tesla" data-price="low">
+                <img src="{% static 'auto/img/tesla.png' %}" alt="Эконом" class="car-image">
+                <h3>Tesla Model 3</h3>
+                <p class="price">300 ₽/30мин</p>
             </div>
-            <div class="car">
-                <img src="{% static 'main/img/g-class.png' %}" alt="Седан" class="car-image">
-                <h3>Toyota Camry</h3>
-                <p class="price">800$ / час</p>
+            <div class="car" data-class="premium" data-brand="toyota" data-price="medium">
+                <img src="{% static 'auto/img/mark-2.png' %}" alt="Премиальное" class="car-image">
+                <h3>Toyota Mark II</h3>
+                <p class="price">500 ₽/30мин</p>
             </div>
-            <div class="car">
-                <img src="{% static 'main/img/g-class.png' %}" alt="Седан" class="car-image">
-                <h3>Toyota Camry</h3>
-                <p class="price">800$ / час</p>
+            <div class="car" data-class="premium" data-brand="bmw" data-price="medium">
+                <img src="{% static 'auto/img/bmw-m5-f90.png' %}" alt="Премиальное" class="car-image">
+                <h3>BMW M5 F90</h3>
+                <p class="price">500 ₽/30мин</p>
             </div>
-            <div class="car">
-                <img src="{% static 'main/img/g-class.png' %}" alt="Седан" class="car-image">
-                <h3>Toyota Camry</h3>
-                <p class="price">800$ / час</p>
+            <div class="car" data-class="lux" data-brand="mercedes" data-price="high">
+                <img src="{% static 'auto/img/mercedes-gls.png' %}" alt="Люкс" class="car-image">
+                <h3>Mercedes GLS</h3>
+                <p class="price">700 ₽/30мин</p>
             </div>
-            <div class="car">
-                <img src="{% static 'main/img/g-class.png' %}" alt="Седан" class="car-image">
-                <h3>Toyota Camry</h3>
-                <p class="price">800$ / час</p>
+            <div class="car" data-class="econom" data-brand="subaru" data-price="low">
+                <img src="{% static 'auto/img/subaru-empreza.png' %}" alt="Эконом" class="car-image">
+                <h3>Subaru Empreza</h3>
+                <p class="price">300 ₽/30мин</p>
             </div>
-            <div class="car">
-                <img src="{% static 'main/img/g-class.png' %}" alt="Седан" class="car-image">
-                <h3>Toyota Camry</h3>
-                <p class="price">800$ / час</p>
+            <div class="car" data-class="premium" data-brand="nissan" data-price="medium">
+                <img src="{% static 'auto/img/nissan-skyline.png' %}" alt="Премиальное" class="car-image">
+                <h3>Nissan Skyline</h3>
+                <p class="price">500 ₽/30мин</p>
             </div>
-            <div class="car">
-                <img src="{% static 'main/img/g-class.png' %}" alt="Седан" class="car-image">
-                <h3>Toyota Camry</h3>
-                <p class="price">800$ / час</p>
+            <div class="car" data-class="premium" data-brand="gaz" data-price="medium">
+                <img src="{% static 'auto/img/gaz-21.png' %}" alt="Премиальное" class="car-image">
+                <h3>ГАЗ-21</h3>
+                <p class="price">500 ₽/30мин</p>
             </div>
-            <div class="car">
-                <img src="{% static 'main/img/g-class.png' %}" alt="Седан" class="car-image">
-                <h3>Toyota Camry</h3>
-                <p class="price">800$ / час</p>
+            <div class="car" data-class="lux" data-brand="bmw" data-price="high">
+                <img src="{% static 'auto/img/bmw-xm.png' %}" alt="Люкс" class="car-image">
+                <h3>BMW XM</h3>
+                <p class="price">700 ₽/30мин</p>
             </div>
-            <div class="car">
-                <img src="{% static 'main/img/g-class.png' %}" alt="Седан" class="car-image">
-                <h3>Toyota Camry</h3>
-                <p class="price">800$ / час</p>
+            <div class="car" data-class="lux" data-brand="porsche" data-price="high">
+                <img src="{% static 'auto/img/porsche-911.png' %}" alt="Люкс" class="car-image">
+                <h3>Porsche 911 GT2</h3>
+                <p class="price">700 ₽/30мин</p>
             </div>
-            <div class="car">
-                <img src="{% static 'main/img/g-class.png' %}" alt="Седан" class="car-image">
-                <h3>Toyota Camry</h3>
-                <p class="price">800$ / час</p>
+            <div class="car" data-class="premium" data-brand="toyota" data-price="medium">
+                <img src="{% static 'auto/img/land-cruiser-200.png' %}" alt="Премиальное" class="car-image">
+                <h3>Toyota Land Cruiser 200</h3>
+                <p class="price">500 ₽/30мин</p>
             </div>
         </div>
 
@@ -108,15 +111,14 @@
             <p>&copy; 2024 L-cars</p>
         </footer>
     </body>
-
     <style>
-
         * {
     box-sizing: border-box; /* Глобальное применение box-sizing */
         }
 
         body {
-    font-family: Arial, sans-serif;
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
     margin: 0;
     padding: 0;
     }
@@ -142,7 +144,8 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr); /* 4 колонки */
         gap: 20px; /* Отступы между элементами */
-        padding: 0 20px;
+        padding: 20px 20px;
+
     }
 
     .car {
@@ -157,6 +160,13 @@
         width: 100%; /* Адаптация изображения к размеру блока */
         height: auto;
     }
+    .car h3 {
+        margin-bottom: 20px; /* Отступ в 20 пикселей снизу для заголовка h3 */
+    }
+
+    .car p {
+        margin-top: 20px; /* Отступ в 20 пикселей сверху для абзаца p */
+    }
 
     .price {
         font-size: 1.2em;
@@ -164,11 +174,42 @@
     }
 
     footer {
+        font-weight: bold;
         background: #8a8989;
         color: #fff;
         text-align: center;
-        padding: 20px 0;
+        padding: 15px 0;
     }
     </style>
 
+<script>
+    const filters = document.querySelectorAll('.filters select');
+    const cars = document.querySelectorAll('.car');
+
+    filters.forEach(filter => {
+        filter.addEventListener('change', filterCars);
+    });
+
+    function filterCars() {
+        const carClass = document.getElementById('car-class').value;
+        const brand = document.getElementById('brand').value;
+        const price = document.getElementById('price').value;
+
+        cars.forEach(car => {
+            const carDataClass = car.dataset.class;
+            const carDataBrand = car.dataset.brand;
+            const carDataPrice = car.dataset.price;
+
+            const showCar =
+                (carClass === 'all' || carClass === carDataClass) &&
+                (brand === 'all' || brand === carDataBrand) &&
+                (price === 'all' || price === carDataPrice);
+
+            car.style.display = showCar ? 'block' : 'none';
+        });
+    }
+</script>
+
 {% endblock %}
+
+
