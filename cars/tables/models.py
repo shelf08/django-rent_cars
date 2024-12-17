@@ -4,12 +4,12 @@ from datetime import datetime
 from django.core.exceptions import ValidationError
 
 
-# from django.contrib import admin
-# from .widgets import Time30MinInput
+
 class Automobile(models.Model):
     brand = models.CharField(max_length=50)
     model = models.CharField(max_length=50)
     cost = models.DecimalField(max_digits=10, decimal_places=2)
+    image = models.ImageField(upload_to='tables/img/')
 
     class Meta:
 
@@ -41,7 +41,7 @@ class Client(models.Model):
 
 class Club_card(models.Model):
     bonuses = models.IntegerField(default=0)
-    client = models.ForeignKey(to=Client, on_delete=models.CASCADE)
+    client = models.ForeignKey(to=Client, on_delete=models.CASCADE, related_name='club_card')
 
 
     class Meta:

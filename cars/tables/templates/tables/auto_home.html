@@ -1,0 +1,126 @@
+{% extends 'main/layout.html' %}
+
+{% load static %}
+
+
+{% block title %}Автомобили{% endblock %}
+
+
+{% block content %}
+    <body>
+        <form method="get">
+            <label for="price">Цена:</label>
+            <select id="price" name="price">
+                <option value="all">Все</option>
+                <option value="low">300 руб/30мин</option>
+                <option value="medium">500 руб/30мин</option>
+                <option value="high">700 руб/30мин</option>
+            </select>
+
+            <div class="filter">
+                <label for="brand">Марка:</label>
+                <select id="brand" name="brand">
+                    <option value="all">Все</option>
+                    <option value="toyota">Toyota</option>
+                    <option value="bmw">BMW</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="tesla">Tesla</option>
+                    <option value="subaru">Subaru</option>
+                    <option value="lada">Lada</option>
+                    <option value="gaz">ГАЗ</option>
+                    <option value="nissan">Nissan</option>
+                    <option value="porsche">Porsche</option>
+                </select>
+            </div>
+
+            <button type="submit">Применить фильтры</button>
+        </form>
+
+        <div class="car-list">
+            {% for automobile in automobiles %}
+                <div class="car" data-brand="{{ automobile.brand|lower }}" data-price="{% if automobile.cost < 500 %}low{% elif automobile.cost < 700 %}medium{% else %}high{% endif %}">
+                    <img src="{% static 'tables/img/' %}{{ automobile.brand|lower }}-{{ automobile.model|lower }}.png" alt="{{ automobile.brand }} {{ automobile.model }}" class="car-image">
+                    <h3>{{ automobile.brand }} {{ automobile.model }}</h3>
+                    <p class="price">{{ automobile.cost }} ₽/30мин</p>
+                </div>
+            {% empty %}
+                <p>Нет автомобилей для отображения.</p>
+            {% endfor %}
+        </div>
+
+        <footer>
+            <p>&copy; 2024 L-cars</p>
+        </footer>
+    </body>
+    <style>
+        * {
+        box-sizing: border-box; /* Глобальное применение box-sizing */
+        }
+
+        .car-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        }
+
+        .car {
+        width: calc(25% - 10px); /* 4 колонки, учитывая отступы */
+        margin-bottom: 20px; /* Отступ между строками */
+        text-align: center; /* Центрируем текст внутри блока */
+        }
+
+        .car-image {
+        width: 100%; /* Максимальная ширина изображения */
+        height: auto; /* Автоматическая высота */
+        }
+
+        .price {
+        font-weight: bold; /* Выделяем цену */
+        margin-top: 5px; /* Отступ сверху для разделения с предыдущим текстом */
+        }
+
+        form {
+        display: flex; /* Используем flexbox для расположения элементов */
+        flex-direction: column; /* Вертикальное расположение элементов */
+        align-items: center; /* Центрируем элементы по горизонтали */
+        margin: 20px auto; /* Центрируем форму на странице */
+        width: 300px; /* Ширина формы */
+        }
+
+        label {
+        margin-bottom: 5px; /* Отступ между меткой и селектом */
+        }
+
+        select {
+        width: 100%; /* Ширина селектов 100% */
+        margin-bottom: 15px; /* Отступ между селектами */
+        padding: 5px; /* Внутренние отступы для лучшего восприятия */
+        }
+
+        button {
+        padding: 10px 15px; /* Отступы вокруг текста кнопки */
+        background-color: #007BFF; /* Цвет фона кнопки */
+        color: white; /* Цвет текста кнопки */
+        border: none; /* Убираем рамку */
+        border-radius: 5px; /* Скругление углов кнопки */
+        cursor: pointer; /* Указываем, что это кликабельный элемент */
+        }
+
+        button:hover {
+        background-color: #0056b3; /* Цвет кнопки при наведении */
+        }
+
+         footer {
+         font-weight: bold;
+         background: #8a8989;
+         color: #fff;
+         text-align: center;
+         padding: 15px 0;
+        }
+    </style>
+
+
+
+{% endblock %}
+
+
