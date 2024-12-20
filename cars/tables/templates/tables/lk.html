@@ -5,20 +5,35 @@
 {% block content %}
 <div class="login-container">
     <h2>Вход в личный кабинет</h2>
-    <form action="{% url 'lk' %}" method="POST">
+    <form action="{% url 'lk' %}" method="POST" onsubmit="return validateForm()">
         {% csrf_token %}
         {{ form.phone.label_tag }}
         {{ form.phone }}
         <button type="submit">Войти</button>
     </form>
     {% if error %}
-        <p style="color: red;">{{ error }}</p>
+        <script>
+            alert("{{ error }}");
+        </script>
     {% endif %}
     <p>Нет аккаунта? <a href="{% url 'signup' %}">Зарегистрироваться</a></p>
 </div>
     <footer>
         <p>&copy; 2024 L-cars</p>
     </footer>
+
+<script>
+    function validateForm() {
+        var phoneInput = document.getElementById('id_phone').value;
+        var phonePattern = /^89\d{9}$/;
+
+        if (!phonePattern.test(phoneInput)) {
+            alert("Введите номер телефона в формате 8-9...");
+            return false;
+        }
+        return true;
+    }
+</script>
 
 <style>
     body {

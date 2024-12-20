@@ -5,7 +5,7 @@
 {% block content %}
     <h1>Регистрация</h1>
 
-    <form method="post" action="{% url 'signup' %}">
+    <form method="post" action="{% url 'signup' %}" onsubmit="return validateForm()">
         {% csrf_token %}
 
         <div>
@@ -25,6 +25,35 @@
 
         <button type="submit">Зарегистрироваться</button>
     </form>
+
+<script>
+    function validateForm() {
+        var phoneInput = document.getElementById('phone_number').value;
+        var fullNameInput = document.getElementById('full_name').value;
+        var ageInput = document.getElementById('age').value;
+
+        var phonePattern = /^89\d{9}$/;
+        var namePattern = /^[А-Яа-яЁё\s-]+$/; // Русские буквы, пробел и дефис
+
+        if (!phonePattern.test(phoneInput)) {
+            alert("Введите номер телефона в формате 8-9...");
+            return false;
+        }
+
+        if (!namePattern.test(fullNameInput)) {
+            alert("Неправильный формат ФИО");
+            return false;
+        }
+
+        if (!/^\d{2}$/.test(ageInput)) {
+            alert("Неправильный формат Возраста");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
 
 <style>
     body {
